@@ -1,6 +1,9 @@
 # BetterSortingAlgorithim
 
-bro table.sort doesn't support multi comparision values so i made a  extension of it that assigns a score value for each of the objects and then sorts them base on the score value 
+Table.Sort Doesn't support multi comparision Values,
+So that is why this library exists.
+
+Good for making combat bots, and other bots that require a high intensive prioritization system.
 
 loadstring:
 ```lua
