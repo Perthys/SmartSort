@@ -4,6 +4,13 @@ local setmetatable = setmetatable;
 local pairs = pairs;
 local table_sort = table.sort
 
+
+local BoolHandlers = {
+    [true] = 1;
+    [false] = 0;
+}
+
+
 function Sort.new(Algorithim)
     return setmetatable({
         Algorithim = Algorithim or {},
@@ -31,9 +38,17 @@ function Sort:Sort(Array, Type)
                 local Point = CurrentCheck.Point
                 
                 if CurrentCheck.Type == "Lower" then
-                    ActualArray.Point = Point / Value;
+                    if BoolHandlers[Value] then
+                        ActualArray.Point = BoolHandlers[Value] / Value;
+                    else
+                        ActualArray.Point = Point / Value;
+                    end
                 elseif CurrentCheck.Type == "Higher" then
-                    ActualArray.Point = Point * Value;
+                    if BoolHandlers[Value] then
+                        ActualArray.Point = BoolHandlers[Value] * Value;
+                    else
+                        ActualArray.Point = Point * Value;
+                    end
                 end
             end
 
