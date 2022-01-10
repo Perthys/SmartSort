@@ -11,7 +11,7 @@ local BoolHandlers = {
 }
 
 
---[[[=[
+--[[
     @class Sort
 
     @description
@@ -20,7 +20,7 @@ local BoolHandlers = {
         Optional table if you do not want to use :Add();
     @returns {table}
         Returns a new instance of the Sort class
-]=]]]
+]]
 
 function Sort.new(Algorithim)
     return setmetatable({
@@ -29,7 +29,7 @@ function Sort.new(Algorithim)
 end
 
 
---[[[=[
+--[[
     @description
         This is the function used for Adding new values to the sort.
     @param Index any, required
@@ -40,7 +40,7 @@ end
        The priority of the value to be sorted. (Higher, Lower)
     @returns {table}
         Returns self;
-]=]]]
+]]
 
 function Sort:Add(Index, Point, Type)
     self.Algorithim[Index] = {
@@ -51,14 +51,14 @@ function Sort:Add(Index, Point, Type)
     return self
 end
 
---[[[=[
+--[[
     @description
         This is the function to sort the values
     @param Array table, required
         The Table to be sorted.
     @returns {table}
         Returns The Sorted Array
-]=]]]
+]]
 
 function Sort:Sort(Array, Type)
     local Type = Type or "Lower";
@@ -108,14 +108,14 @@ function Sort:Sort(Array, Type)
     return Array
 end
 
---[[[=[
+--[[
     @description
         Returns the first value of the sorted array.
     @param Array table, required
         The Table to be sorted.
     @returns {table}
         Returns The first value of the sorted array.
-]=]]]
+]]
 
 function Sort:GetBestValue(...)
     return self:Sort(...)[1];
