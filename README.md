@@ -1,16 +1,16 @@
-# BetterSortingAlgorithim
-
+## About
 Table.Sort Doesn't support multi comparision Values,
 So that is why this library exists.
 
 Good for making combat bots, and other bots that require a high intensive prioritization system.
 
-loadstring:
+
+###### Loadstring:
 ```lua
 local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/BetterSortingAlgorithim/main/main.lua'))()
 ```
 
-example:
+###### Example:
 
 ```lua
 local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/BetterSortingAlgorithim/main/main.lua'))()
@@ -35,7 +35,7 @@ local Sorted = Algorithim:Sort({
 }, "Lower")
 ```
 
-Output:
+###### Output:
 ```lua
 {
     ["1"] = {
