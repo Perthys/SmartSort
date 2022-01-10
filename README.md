@@ -1,5 +1,5 @@
 ## About
-[Table.Sort](https://www.lua.org/pil/19.3.html) Doesn't support multi comparision Values,
+*[Table.Sort](https://www.lua.org/pil/19.3.html)* Doesn't support multi comparision Values,
 So that is why this library exists.
 
 Good for making combat bots, and other bots that require a high intensive prioritization system.
