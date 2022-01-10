@@ -13,13 +13,14 @@ end
 function Sort:Add(Index, Point, Type)
     self.Algorithim[Index] = {
         Point = Point,
-        Type = Type,
+        Type = Type or "Higher",
     }
     
     return self
 end
 
 function Sort:Sort(Array, Type)
+    local Type = Type or "Lower";
     local Algorithim = self.Algorithim
 
     for _, ActualArray in pairs(Array) do
