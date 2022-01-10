@@ -58,3 +58,5 @@ function Sort:Sort(Array, Type)
 
     return Array
 end
+
+return Sort
