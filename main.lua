@@ -75,7 +75,7 @@ function Sort:Sort(Array, Type)
 end
 
 function Sort:GetBestValue(...)
-    return Sort:Sort(...)[1];
+    return self:Sort:Sort(...)[1];
 end
 
 return Sort
