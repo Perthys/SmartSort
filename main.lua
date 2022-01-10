@@ -74,4 +74,52 @@ function Sort:Sort(Array, Type)
     return Array
 end
 
+function Sort:GetBestValue(Array, Type)
+    local Type = Type or "Lower";
+    local Algorithim = self.Algorithim
+
+    for _, ActualArray in pairs(Array) do
+        for Index, Value in pairs(ActualArray) do
+            local CurrentCheck = Algorithim[Index]
+
+            if CurrentCheck and CurrentCheck.Point then
+                local Point = CurrentCheck.Point
+                
+                if CurrentCheck.Type == "Lower" then
+                    if BoolHandlers[Value] then
+                        ActualArray.Point = Point / BoolHandlers[Value];
+                    else
+                        ActualArray.Point = Point / Value;
+                    end
+                elseif CurrentCheck.Type == "Higher" then
+                    if BoolHandlers[Value] then
+                        ActualArray.Point = Point * BoolHandlers[Value];
+                    else
+                        ActualArray.Point = Point * Value;
+                    end
+                end
+            end
+
+        end
+    end
+
+    table_sort(Array, function(a, b)
+        if a.Point and b.Point then
+            if Type == "Higher" then
+                return a.Point > b.Point;
+            elseif Type == "Lower" then
+                return a.Point < b.Point;
+            end
+        end
+    end)
+    
+    for _, ActualArray in pairs(Array) do
+        for Index, Value in pairs(ActualArray) do
+            ActualArray["Point"] = nil;
+        end
+    end
+
+    return Array[1]
+end
+
 return Sort
