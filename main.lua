@@ -39,13 +39,13 @@ function Sort:Sort(Array, Type)
                 
                 if CurrentCheck.Type == "Lower" then
                     if BoolHandlers[Value] then
-                        ActualArray.Point = BoolHandlers[Value] / Value;
+                        ActualArray.Point = Point / BoolHandlers[Value];
                     else
                         ActualArray.Point = Point / Value;
                     end
                 elseif CurrentCheck.Type == "Higher" then
                     if BoolHandlers[Value] then
-                        ActualArray.Point = BoolHandlers[Value] * Value;
+                        ActualArray.Point = Point * BoolHandlers[Value];
                     else
                         ActualArray.Point = Point * Value;
                     end
