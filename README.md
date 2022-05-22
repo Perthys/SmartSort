@@ -14,13 +14,13 @@ I personally use this for making combat bots, and other bots that require a high
 
 ###### Loadstring:
 ```lua
-local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/BetterSortingAlgorithim/main/main.lua'))()
+local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/SmartSort/main/main.lua'))()
 ```
 
 ###### Example:
 
 ```lua
-local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/BetterSortingAlgorithim/main/main.lua'))()
+local Sort = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/SmartSort/main/main.lua))()
 local Algorithim = Sort.new()
     :Add("Health", 1, "Higher")
     :Add("Distance", 2, "Higher")
