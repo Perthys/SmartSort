@@ -110,7 +110,7 @@ function Sort:Sort(Array, Type)
         end
     end
     
-    Array = ShellSort(Array)
+    Array = ShellSort(Array, Type)
     
     for _, ActualArray in pairs(Array) do
         for Index, Value in pairs(ActualArray) do
