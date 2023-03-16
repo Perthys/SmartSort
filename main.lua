@@ -11,6 +11,27 @@ local BoolHandlers = {
 }
 
 
+local function ShellSort(SortedTable)
+    local Increment = math.ceil(#SortedTable / 2)
+
+    while Increment > 0 do
+        for Itteration = Increment, #SortedTable do
+            local Temp = SortedTable[Itteration]
+            local Current = Itteration
+
+            while Current > Increment and SortedTable[Current - Increment].Point > Temp.Point do
+                SortedTable[Current] = SortedTable[Current-Increment]
+                Current = Current - Increment
+            end
+            SortedTable[Current] = Temp
+        end
+
+        Increment = math.floor( 0.5 + Increment / 2.2 )
+    end 
+
+    return SortedTable
+end
+
 --[[
     @class Sort
 
@@ -88,16 +109,8 @@ function Sort:Sort(Array, Type)
 
         end
     end
-
-    table_sort(Array, function(a, b)
-        if a.Point and b.Point then
-            if Type == "Higher" then
-                return a.Point > b.Point;
-            elseif Type == "Lower" then
-                return a.Point < b.Point;
-            end
-        end
-    end)
+    
+    Array = ShellSort(Array)
     
     for _, ActualArray in pairs(Array) do
         for Index, Value in pairs(ActualArray) do
